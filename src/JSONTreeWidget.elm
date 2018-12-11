@@ -74,8 +74,8 @@ viewJsonTree model =
     let
         toolbar =
             div []
-                [ button [ onClick ExpandAll ] [ text "Expand All" ]
-                , button [ onClick CollapseAll ] [ text "Collapse All" ]
+                [ button [ type_ "button", onClick ExpandAll ] [ text "Expand All" ]
+                , button [ type_ "button", onClick CollapseAll ] [ text "Collapse All" ]
                 ]
 
         config =
