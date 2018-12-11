@@ -87,6 +87,7 @@ viewJsonTree model =
 
           else
             text ""
+        , br [] []
         , case model.parseResult of
             Ok rootNode ->
                 JsonTree.view rootNode config model.treeState
