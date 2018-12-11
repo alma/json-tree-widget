@@ -3,12 +3,12 @@
   "version": "1.0.0",
   "description": "Chefclub JSON Tree Widget",
   "scripts": {
-    "build": "npm run cleanup && npm run copy-assets && elm make src/Main.elm --output=build/app.js",
+    "build": "npm run cleanup && npm run copy-assets && elm make src/JSONTreeWidget.elm --output=build/app.js",
     "copy-assets": "rimraf build && mkdir build && cp -r public/* build",
     "cleanup": "rimraf elm-stuff/",
-    "debug": "elm-live src/Main.elm --port=3000 --dir=public/ -- --output=public/app.js --debug",
+    "debug": "elm-live src/JSONTreeWidget.elm --port=3000 --dir=public/ -- --output=public/app.js --debug",
     "deploy": "npm run build && gh-pages --dist build/",
-    "live": "elm-live src/Main.elm --port=3000 --dir=public/ -- --output=public/app.js",
+    "live": "elm-live src/JSONTreeWidget.elm --port=3000 --dir=public/ -- --output=public/app.js",
     "test": "elm-test"
   },
   "repository": {

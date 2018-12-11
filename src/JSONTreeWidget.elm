@@ -1,4 +1,4 @@
-module Main exposing (main)
+module JSONTreeWidget exposing (main)
 
 import Browser
 import Html exposing (..)
