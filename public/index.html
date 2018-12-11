@@ -11,7 +11,7 @@
   <script src="app.js"></script>
   <script>
     const element = document.getElementById("app");
-    const app = Elm.Main.init({node: element});
+    const app = Elm.Main.init({flags: {json: '{"hello": "world"}', showToolbar: false}, node: element});
   </script>
 </body>
 </html>
