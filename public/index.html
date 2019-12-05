@@ -11,7 +11,278 @@
   <script src="app.js"></script>
   <script>
     const element = document.getElementById("app");
-    const app = Elm.JSONTreeWidget.init({flags: {json: '{"hello": "world"}', showToolbar: true}, node: element});
+    const app = Elm.JSONTreeWidget.init({flags: {json: JSON.stringify([
+  {
+    "_id": "5d8bacc55d2f763e39c5f1fd",
+    "index": 0,
+    "guid": "9a6df6ef-8a86-477e-8f4c-6d5245deb25e",
+    "isActive": true,
+    "balance": "$1,154.12",
+    "picture": "http://placehold.it/32x32",
+    "age": 37,
+    "eyeColor": "brown",
+    "name": "Rosario Petty",
+    "gender": "male",
+    "company": "METROZ",
+    "email": "rosariopetty@metroz.com",
+    "phone": "+1 (861) 461-3106",
+    "address": "238 Cherry Street, Malo, Minnesota, 204",
+    "about": "Ea occaecat irure aliqua sint do reprehenderit reprehenderit occaecat dolor. Non voluptate anim fugiat commodo magna ea laborum adipisicing nulla anim ullamco dolor. Eiusmod cupidatat ea in nulla veniam Lorem excepteur ullamco eu labore pariatur. Labore velit reprehenderit qui nostrud exercitation ut exercitation adipisicing.\r\n",
+    "registered": "2016-11-18T09:51:33 -01:00",
+    "latitude": 19.835211,
+    "longitude": -24.648628,
+    "tags": [
+      "velit",
+      "cillum",
+      "proident",
+      "enim",
+      "velit",
+      "mollit",
+      "ad"
+    ],
+    "friends": [
+      {
+        "id": 0,
+        "name": "Chase Riddle"
+      },
+      {
+        "id": 1,
+        "name": "Durham Haney"
+      },
+      {
+        "id": 2,
+        "name": "Stephens Stewart"
+      }
+    ],
+    "greeting": "Hello, Rosario Petty! You have 4 unread messages.",
+    "favoriteFruit": "apple"
+  },
+  {
+    "_id": "5d8bacc55689c59fb0ebcc48",
+    "index": 1,
+    "guid": "72349de2-4362-4ebf-bf29-3b5a8b5265f8",
+    "isActive": true,
+    "balance": "$2,144.64",
+    "picture": "http://placehold.it/32x32",
+    "age": 37,
+    "eyeColor": "brown",
+    "name": "Zimmerman Sullivan",
+    "gender": "male",
+    "company": "DIGINETIC",
+    "email": "zimmermansullivan@diginetic.com",
+    "phone": "+1 (852) 405-3141",
+    "address": "636 Loring Avenue, Mahtowa, Guam, 3984",
+    "about": "Amet culpa minim occaecat do minim pariatur eu labore adipisicing. Adipisicing velit dolore consectetur in id. Quis sint aliquip fugiat sit eiusmod ex dolor proident laboris.\r\n",
+    "registered": "2019-09-11T12:05:56 -02:00",
+    "latitude": 76.28277,
+    "longitude": -114.238523,
+    "tags": [
+      "aliquip",
+      "esse",
+      "qui",
+      "tempor",
+      "dolor",
+      "sunt",
+      "id"
+    ],
+    "friends": [
+      {
+        "id": 0,
+        "name": "Simmons Pratt"
+      },
+      {
+        "id": 1,
+        "name": "Hartman Livingston"
+      },
+      {
+        "id": 2,
+        "name": "Herring Bender"
+      }
+    ],
+    "greeting": "Hello, Zimmerman Sullivan! You have 4 unread messages.",
+    "favoriteFruit": "strawberry"
+  },
+  {
+    "_id": "5d8bacc5acf0169f98576d26",
+    "index": 2,
+    "guid": "545d4a8a-56ce-4312-8894-7de313f23ed2",
+    "isActive": true,
+    "balance": "$2,386.07",
+    "picture": "http://placehold.it/32x32",
+    "age": 22,
+    "eyeColor": "brown",
+    "name": "Hood Bradshaw",
+    "gender": "male",
+    "company": "DIGIPRINT",
+    "email": "hoodbradshaw@digiprint.com",
+    "phone": "+1 (953) 513-2157",
+    "address": "709 Coffey Street, Flintville, Federated States Of Micronesia, 332",
+    "about": "Aute incididunt in ea tempor eu excepteur reprehenderit. Ex minim cillum do esse occaecat. Officia sit dolor non anim fugiat amet sint.\r\n",
+    "registered": "2016-03-09T12:02:58 -01:00",
+    "latitude": -76.441587,
+    "longitude": 103.7011,
+    "tags": [
+      "esse",
+      "quis",
+      "minim",
+      "labore",
+      "qui",
+      "culpa",
+      "sit"
+    ],
+    "friends": [
+      {
+        "id": 0,
+        "name": "Liliana Burris"
+      },
+      {
+        "id": 1,
+        "name": "Clarissa Wolfe"
+      },
+      {
+        "id": 2,
+        "name": "Tamara Orr"
+      }
+    ],
+    "greeting": "Hello, Hood Bradshaw! You have 1 unread messages.",
+    "favoriteFruit": "banana"
+  },
+  {
+    "_id": "5d8bacc51c90be58bcbe3705",
+    "index": 3,
+    "guid": "93db7c7a-05c9-4552-a160-6752809c0933",
+    "isActive": false,
+    "balance": "$3,900.35",
+    "picture": "http://placehold.it/32x32",
+    "age": 40,
+    "eyeColor": "brown",
+    "name": "Ray Levy",
+    "gender": "male",
+    "company": "QUILTIGEN",
+    "email": "raylevy@quiltigen.com",
+    "phone": "+1 (922) 439-3214",
+    "address": "435 Jamaica Avenue, Loomis, Vermont, 7197",
+    "about": "Irure reprehenderit esse fugiat cupidatat ipsum irure excepteur proident occaecat occaecat laborum labore occaecat. Eiusmod nisi do cillum et ex eiusmod ad nulla deserunt. Reprehenderit mollit quis in duis culpa ad. Lorem mollit commodo nostrud elit nulla veniam velit sit. Nisi cillum sit anim eiusmod sunt sit elit commodo dolor id. Enim amet laboris in veniam incididunt elit pariatur fugiat deserunt mollit.\r\n",
+    "registered": "2014-10-17T06:49:42 -02:00",
+    "latitude": 55.892453,
+    "longitude": -156.350306,
+    "tags": [
+      "commodo",
+      "velit",
+      "consectetur",
+      "consequat",
+      "sint",
+      "elit",
+      "aliqua"
+    ],
+    "friends": [
+      {
+        "id": 0,
+        "name": "Fry Slater"
+      },
+      {
+        "id": 1,
+        "name": "Bowen Alford"
+      },
+      {
+        "id": 2,
+        "name": "Brittney Huff"
+      }
+    ],
+    "greeting": "Hello, Ray Levy! You have 6 unread messages.",
+    "favoriteFruit": "banana"
+  },
+  {
+    "_id": "5d8bacc5c5bd7bc2a80dd7b0",
+    "index": 4,
+    "guid": "23fdd118-92ba-44d0-a1a2-4c9eeb3f218e",
+    "isActive": true,
+    "balance": "$2,964.13",
+    "picture": "http://placehold.it/32x32",
+    "age": 29,
+    "eyeColor": "blue",
+    "name": "Estrada Baxter",
+    "gender": "male",
+    "company": "BUZZWORKS",
+    "email": "estradabaxter@buzzworks.com",
+    "phone": "+1 (903) 402-2215",
+    "address": "254 Huron Street, Cochranville, Washington, 3878",
+    "about": "Magna nulla sunt mollit veniam cillum est deserunt sunt esse reprehenderit Lorem ut et. Ex aliqua aliqua ipsum ex fugiat esse exercitation ipsum. Proident veniam ipsum sit laboris ea voluptate incididunt labore ex aliquip do ea enim.\r\n",
+    "registered": "2018-01-19T07:34:39 -01:00",
+    "latitude": 39.923693,
+    "longitude": -171.954662,
+    "tags": [
+      "esse",
+      "nisi",
+      "occaecat",
+      "est",
+      "qui",
+      "duis",
+      "fugiat"
+    ],
+    "friends": [
+      {
+        "id": 0,
+        "name": "Stuart Navarro"
+      },
+      {
+        "id": 1,
+        "name": "Cecelia Herrera"
+      },
+      {
+        "id": 2,
+        "name": "Juliana Bentley"
+      }
+    ],
+    "greeting": "Hello, Estrada Baxter! You have 9 unread messages.",
+    "favoriteFruit": "apple"
+  },
+  {
+    "_id": "5d8bacc56eafa94d02e0c79a",
+    "index": 5,
+    "guid": "41cabec0-fa3a-4d46-be54-437255c8ac3b",
+    "isActive": false,
+    "balance": "$2,661.75",
+    "picture": "http://placehold.it/32x32",
+    "age": 20,
+    "eyeColor": "green",
+    "name": "Gillespie Allen",
+    "gender": "male",
+    "company": "RUGSTARS",
+    "email": "gillespieallen@rugstars.com",
+    "phone": "+1 (856) 485-3518",
+    "address": "105 Wyckoff Avenue, Indio, Nebraska, 2135",
+    "about": "Enim est et nisi id consequat id voluptate laboris. Ipsum laboris aliquip commodo exercitation enim mollit id. Sit laborum ullamco veniam in duis irure proident occaecat labore anim do. Id commodo minim elit id cillum ex ad mollit ad exercitation magna sint ut. Sunt non anim cillum cillum consequat do enim pariatur in consequat in sit irure. Ex ullamco do tempor mollit deserunt nostrud. Ea non sint eu aliqua deserunt fugiat ut ipsum officia fugiat et aliquip incididunt labore.\r\n",
+    "registered": "2015-05-20T06:21:23 -02:00",
+    "latitude": -88.839142,
+    "longitude": 99.218551,
+    "tags": [
+      "pariatur",
+      "quis",
+      "proident",
+      "nisi",
+      "occaecat",
+      "cupidatat",
+      "proident"
+    ],
+    "friends": [
+      {
+        "id": 0,
+        "name": "Ronda Pace"
+      },
+      {
+        "id": 1,
+        "name": "Bettye Osborne"
+      },
+      {
+        "id": 2,
+        "name": "Suzanne Barry"
+      }
+    ],
+    "greeting": "Hello, Gillespie Allen! You have 9 unread messages.",
+    "favoriteFruit": "banana"
+  }
+]), showToolbar: true}, node: element});
   </script>
 </body>
 </html>
