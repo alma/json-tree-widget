@@ -1,9 +1,9 @@
 {
   "name": "json-tree-widget",
   "version": "1.0.0",
-  "description": "Chefclub JSON Tree Widget",
+  "description": "Alma JSON Tree Widget",
   "scripts": {
-    "build": "npm run cleanup && npm run copy-assets && elm make src/JSONTreeWidget.elm --output=build/app.js",
+    "build": "npm run cleanup && npm run copy-assets && elm make src/JSONTreeWidget.elm --output=build/app.js --optimize && uglifyjs build/app.js --compress 'pure_funcs=\"F2,F3,F4,F5,F6,F7,F8,F9,A2,A3,A4,A5,A6,A7,A8,A9\",pure_getters,keep_fargs=false,unsafe_comps,unsafe' | uglifyjs --mangle --output build/app.min.js && mv build/app.min.js build/app.js",
     "copy-assets": "rimraf build && mkdir build && cp -r public/* build",
     "cleanup": "rimraf elm-stuff/",
     "debug": "elm-live src/JSONTreeWidget.elm --port=3000 --dir=public/ -- --output=public/app.js --debug",
@@ -13,20 +13,21 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ChefClub/json-tree-widget.git"
+    "url": "git+https://github.com/alma/json-tree-widget.git"
   },
   "bugs": {
-    "url": "https://github.com/ChefClub/json-tree-widget/issues"
+    "url": "https://github.com/alma/json-tree-widget/issues"
   },
-  "homepage": "https://github.com/ChefClub/json-tree-widget#readme",
-  "author": "ChefClub",
+  "homepage": "https://github.com/alma/json-tree-widget#readme",
+  "author": "Alma",
   "license": "ISC",
   "devDependencies": {
-    "elm": "^0.19.1-3",
-    "elm-format": "^0.8.2",
-    "elm-live": "^4.0.1",
-    "elm-test": "^0.19.1",
-    "gh-pages": "^2.1.1",
-    "rimraf": "^3.0.0"
+    "elm": "^0.19.1-5",
+    "elm-format": "^0.8.5",
+    "elm-live": "^4.0.2",
+    "elm-test": "^0.19.1-revision6",
+    "gh-pages": "^3.1.0",
+    "rimraf": "^3.0.2",
+    "uglify-js": "^3.12.7"
   }
 }
