@@ -73,9 +73,9 @@ viewJsonTree : Model -> Html Msg
 viewJsonTree model =
     let
         toolbar =
-            div []
-                [ button [ type_ "button", onClick ExpandAll ] [ text "Expand All" ]
-                , button [ type_ "button", onClick CollapseAll ] [ text "Collapse All" ]
+            div [ class "btn-group" ]
+                [ button [ type_ "button", class "btn", onClick ExpandAll ] [ text "Expand All" ]
+                , button [ type_ "button", class "btn", onClick CollapseAll ] [ text "Collapse All" ]
                 ]
 
         config =
