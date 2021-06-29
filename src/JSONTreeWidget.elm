@@ -58,10 +58,6 @@ update msg model =
         CollapseAll ->
             case model.parseResult of
                 Ok rootNode ->
-                    let
-                        _ =
-                            Debug.log "JSON" rootNode
-                    in
                     ( { model | treeState = JsonTree.collapseToDepth 1 rootNode model.treeState }, Cmd.none )
 
                 Err _ ->
@@ -89,14 +85,29 @@ viewJsonTree : Model -> Html Msg
 viewJsonTree model =
     let
         toolbar =
-            div [ class "btn-group" ]
-                [ button [ type_ "button", class "btn btn-default", onClick ExpandAll ] [ text "Expand All" ]
-                , button [ type_ "button", class "btn btn-default", onClick CollapseAll ] [ text "Collapse All" ]
-                , if model.showSearchbar then
-                    input [ type_ "search", placeholder "Type to filter json keys", onInput SearchUpdate ] []
+            fieldset [ class "well well-sm form-inline" ]
+                [ div
+                    [ class "form-group pull-right" ]
+                    [ div [ class "btn-group" ]
+                        [ button [ type_ "button", class "btn btn-default", onClick ExpandAll ]
+                            [ span [ class "glyphicon glyphicon-plus", style "margin-right" "6px" ] []
+                            , text "Expand All"
+                            ]
+                        , text "\u{00A0}"
+                        , button [ type_ "button", class "btn btn-default", onClick CollapseAll ]
+                            [ span [ class "glyphicon glyphicon-minus", style "margin-right" "6px" ] []
+                            , text "Collapse All"
+                            ]
+                        ]
+                    ]
+                , div [ class "form-group pull-left", style "margin-left" "1em" ]
+                    [ label [ for "filter-json" ] [ text "Filter:\u{00A0}" ]
+                    , if model.showSearchbar then
+                        input [ id "filter-json", type_ "search", placeholder "Type to filter json keys", class "form-control", style "width" "300px", onInput SearchUpdate ] []
 
-                  else
-                    text ""
+                      else
+                        text ""
+                    ]
                 ]
 
         config =
