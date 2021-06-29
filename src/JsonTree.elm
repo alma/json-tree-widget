@@ -49,7 +49,7 @@ Features:
 -}
 
 import Dict exposing (Dict)
-import Html exposing (Attribute, Html, button, div, li, mark, span, text, ul)
+import Html exposing (Attribute, Html, button, div, li, mark, span, strong, text, ul)
 import Html.Attributes exposing (class, id, style)
 import Html.Events exposing (onClick)
 import Json.Decode as Decode exposing (Decoder)
@@ -376,26 +376,6 @@ viewNodeInternal depth config node state query =
 
 viewScalar : List ( String, String ) -> String -> Node -> Config msg -> Maybe String -> List (Html msg)
 viewScalar someCss str node config query =
-    let
-        searched =
-            case query of
-                Nothing ->
-                    text str
-
-                Just q ->
-                    let
-                        search =
-                            String.toLower q
-
-                        value =
-                            String.toLower <| String.concat [ node.keyPath, " ", str ]
-                    in
-                    if String.contains search value then
-                        mark [] [ text str ]
-
-                    else
-                        text str
-    in
     List.singleton <|
         span
             ([ id node.keyPath ]
@@ -410,7 +390,7 @@ viewScalar someCss str node config query =
                             []
                    )
             )
-            [ searched ]
+            [ highlightText query str ]
 
 
 viewCollapser : Int -> Config msg -> (() -> State) -> String -> Html msg
@@ -485,7 +465,7 @@ viewDict depth dict keyPath config state query =
         viewListItem ( fieldName, node ) =
             li
                 (styleList css.li)
-                ([ span (styleList css.fieldName) [ text fieldName ]
+                ([ span (styleList css.fieldName) [ highlightText query fieldName ]
                  , text ": "
                  ]
                     ++ viewNodeInternal (depth + 1) config node state query
@@ -493,6 +473,29 @@ viewDict depth dict keyPath config state query =
                 )
     in
     [ text "{" ] ++ innerContent ++ [ text "}" ]
+
+
+highlightText : Maybe String -> String -> Html msg
+highlightText query str =
+    case query of
+        Nothing ->
+            text str
+
+        Just q ->
+            let
+                search =
+                    String.toLower q
+
+                value =
+                    String.toLower str
+            in
+            if String.contains search value then
+                mark []
+                    [ strong [] [ text str ]
+                    ]
+
+            else
+                text str
 
 
 
